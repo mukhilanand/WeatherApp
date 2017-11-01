@@ -47,7 +47,8 @@
         <button type="button" class="btn btn-primary" ng-click="updateWeather()">Get Weather Forecast</button>
     </div>
 
-    <h4 class='preferredfont' ng-hide="handleerror">We are facing some issues. will be right back.</h4>
+    <h4 class='preferredfont' ng-hide="handleerror">{{errorvalue}}</h4>
+
 
     <div id="currentWeather" ng-hide="hideCurrentWeather" class="container-fluid" align="center">
         <current-Weather-Directive></current-Weather-Directive>

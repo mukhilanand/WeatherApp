@@ -1,6 +1,11 @@
 var app = angular.module('myApp');
 app.controller('myCtrl',['$scope','$cookies','convertDegreeScale','weatherService', function($scope,$cookies,convertDegreeScale,weatherService) {
     $scope.updateWeather=function(){
+
+        if($scope.cityName.length==0){
+            $scope.errorvalue="Please enter the city name";
+            $scope.handleerror=false;
+        }
         //Adding city to the cookie for an year so that it is persisted across browser sessions
         var now = new Date(),
             exp = new Date(now.getFullYear()+1, now.getMonth(), now.getDate());
@@ -19,6 +24,7 @@ app.controller('myCtrl',['$scope','$cookies','convertDegreeScale','weatherServic
                 $scope.data=weatherService.getdata($scope.forecasts);
                 $scope.series = ['High', 'Low'];
                 $scope.citydisplay=$scope.cityName;
+                $scope.errorvalue="";
                 $scope.handleerror=true;
             }).catch(function(response) {
                   $scope.handleerror=false;

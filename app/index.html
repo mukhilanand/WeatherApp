@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7">
+<![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8">
+<![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="myApp" class="no-js">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My AngularJS App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="app.css"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-cookies.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhlGxEvRlDaEoNU2SSYMtle0sUjcmatwE&libraries=places&sensor=false"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/angular.chartjs/latest/angular-chart.min.js"></script>
+    <script src="services/degreeSVC.js"></script>
+    <script src="services/weatherSVC.js"></script>
+   <script src="app.js"></script>
+    <script src="controller/weatherController.js"></script>
+    <script src="directives/autocompleteGoogle.js"></script>
+    <script src="directives/weatherDirectives.js"></script>
+    <script src="filter/dateFilter.js"></script>
+
+</head>
+<body class=container">
+
+<div class="header container-fluid ">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbBZCfbKvSEWuiu_1yfV6BqIbdW878eul3C_8oKdleZhQ-FUsA">
+    <h1 class="headerfontcolor">Weather App</h1>
+</div>
+
+<div ng-app="myApp" ng-controller="myCtrl" align="center" >
+    <div class="form-group">
+        <input type="text" class="form-control" ng-model="cityName" placeholder="Enter City...." googleplace ng-click="clear()"/>
+        <button type="button" class="btn btn-primary" ng-click="updateWeather()">Get Weather Forecast</button>
+    </div>
+
+    <h4 class='preferredfont' ng-hide="handleerror">We are facing some issues. will be right back.</h4>
+
+    <div id="currentWeather" ng-hide="hideCurrentWeather" class="container-fluid" align="center">
+        <current-Weather-Directive></current-Weather-Directive>
+        <chart-Forecast-Directive></chart-Forecast-Directive>
+    </div>
+
+    <div class="col-sm-3" ng-repeat="forecast in forecasts">
+        <card-Forecast-Directive></card-Forecast-Directive>
+    </div>
+</div>
+</body>
+</html>
+
+
+

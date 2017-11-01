@@ -1,0 +1,102 @@
+
+input[type="text"]
+{
+    margin-top: 10%;
+    margin-bottom: 2%;
+    width: 50%;
+    box-shadow: 10px 10px 10px rgba(0, 0, 40, 0.4);
+    height:40px;
+}
+
+html, body, p,.preferredfont {
+    font-family: 'BentonSans';
+    color: white;
+}
+
+html, body {
+    margin: 10px;
+    background-image:url("https://lh3.googleusercontent.com/-q035b-b8gKs/VUHSQJHzokI/AAAAAAAAAHc/QnCVtJ6htaw/w1920-h1200/black-world-map-wallpaper-hd.jpg") ;
+}
+
+button[type="button"]{
+    margin-bottom:20px;
+    font-family: 'BentonSans';
+    padding: 12px 20px;
+    background-color: #3bb2d6;
+}
+
+canvas{
+    background-color:  rgba(0, 0, 0, 0.9);
+}
+
+.headerfontcolor{
+    color:#3bb2d6;
+}
+
+.degree{
+    font-size:70px;
+    font-weight: bold;
+    color: #3bb2d6;
+}
+
+.highdegree{
+    color: #3bb2d6;
+    font-size: large;
+    font-weight: bold;
+}
+.lowdegree{
+    color: #3bb2d6;
+}
+
+.header img {
+    float: left;
+    width: 100px;
+    height: 100px;
+    background: black;
+}
+
+.customheader{
+    color:#3bb2d6; background-color: rgba(0, 0, 0, 0.9); font-size: large;
+}
+
+.card {
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 10px;
+    background-color:  rgba(0, 0, 0, 0.4);
+    border: 1px solid gray;
+}
+
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (-webkit-min-device-pixel-ratio: 3) {
+    .col-xs-6{
+        width:20px;
+    }
+
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: portrait) {
+    .my-custom-width {
+        width:100%;
+    }
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: landscape) {
+    .my-custom-width{
+        width:25%;
+    }
+
+}
+

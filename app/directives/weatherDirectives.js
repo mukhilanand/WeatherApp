@@ -1,14 +1,15 @@
 //Directive to show the forcasts for 10 days in list of cards
 angular.module('myApp').directive("cardForecastDirective", function() {
     return {
-        template : "<div class=\"card\">\n" +
-        "            <div class=\"card-block\">\n" +
-        "                <h4 class=\"preferredfont\">{{forecast.day | dayfilter}}, {{forecast.date | datefilter }}</h4>\n" +
-        "                <p class=\"highdegree\">High : {{forecast.high}}ºF</p>\n" +
-        "                <p class=\"lowdegree\">Low  : {{forecast.low}}ºF</p>\n" +
-        "                <p>{{forecast.text}}</p>\n" +
-        "            </div>\n" +
-        "        </div>"
+        template : "<div class=\"containerflex\" >\n" +
+        "\n" +
+        "    <div class=\"flex-item\" ng-repeat=\"forecast in forecasts\">\n" +
+        "        <h4 class=preferredfont>{{forecast.day | dayfilter}}, {{forecast.date | datefilter }}</h4>\n" +
+        "        <p class=highdegree>High : {{forecast.high}}ºF</p>\n" +
+        "        <p class=lowdegree>Low  : {{forecast.low}}ºF</p>\n" +
+        "        <p>{{forecast.text}}</p>\n" +
+        "    </div>\n" +
+        "</div>"
     };
 });
 

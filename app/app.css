@@ -66,25 +66,23 @@ canvas{
     background-color:  rgba(0, 0, 0, 0.4);
     border: 1px solid gray;
 }
-
-@media only screen
-and (min-device-width: 414px)
-and (max-device-width: 736px)
-and (-webkit-min-device-pixel-ratio: 3) {
-    .col-xs-6{
-        width:20px;
-    }
-
-}
-
+/*for iphone plus phones*/
 /* Portrait */
 @media only screen
 and (min-device-width: 414px)
 and (max-device-width: 736px)
 and (-webkit-min-device-pixel-ratio: 3)
 and (orientation: portrait) {
-    .my-custom-width {
-        width:100%;
+    .containerflex{
+        display: block;
+    }
+    .flex-item{
+        margin: 0 auto;
+        float: none;
+        margin-bottom: 10px;
+        background-color:  rgba(0, 0, 0, 0.4);
+        border: 1px solid gray;
+        padding: 5px;
     }
 }
 
@@ -94,9 +92,69 @@ and (min-device-width: 414px)
 and (max-device-width: 736px)
 and (-webkit-min-device-pixel-ratio: 3)
 and (orientation: landscape) {
-    .my-custom-width{
-        width:25%;
+    .containerflex{
+        display: flex;
+        flex-wrap:wrap;
     }
 
+    .flex-item{
+        margin: 0 auto;
+        padding: 15px;
+    }
 }
+
+/*for iphone small phones*/
+/* Portrait */
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+    .containerflex{
+        display: block;
+    }
+    .flex-item{
+        margin: 0 auto;
+        float: none;
+        margin-bottom: 10px;
+        background-color:  rgba(0, 0, 0, 0.4);
+        border: 1px solid gray;
+        padding: 5px;
+    }
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+    .containerflex{
+        display: flex;
+        flex-wrap:wrap;
+
+    }
+    .flex-item{
+        margin: 0 auto;
+        padding: 15px;
+
+    }
+}
+
+@media screen
+and (min-device-width: 1200px)
+and (max-device-width: 1600px)
+and (-webkit-min-device-pixel-ratio: 1) {
+    .containerflex{
+        display: flex;
+        flex-wrap:wrap;
+        border: 1px solid gray;
+    }
+    .flex-item{
+        margin: 0 auto;
+        padding: 15px;
+    }
+}
+
+
 
